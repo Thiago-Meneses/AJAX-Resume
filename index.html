@@ -1,0 +1,167 @@
+<DOCTYPE html>
+<html>
+<head>
+    <title>AJAX</title>
+</head>
+<body>
+    <h1>AJAX</h1>
+    <h2>Asynchronous Javascript And Ajax</h2>
+
+    <p>
+        AJAX Só funciona dentro de um servidor! <br>
+        AJAX é usado tanto para pegar dados de um banco de dados como também para pegar dados de um servidor <br>
+        AJAX pode ser usado com o Javascript ou jQuery <br>
+        Não é uma linguagem de programação <br>
+        O AJAX permite que as páginas sejam atualizadas de forma assíncrona, trocando dados com um servidor em segundo plano, assim permitindo atualizar partes de uma página da web sem recarregar a página inteira. <br>
+    </p>
+
+    <h2>Como Funciona?</h2>
+    <ul>
+        O AJAX usa: <br>
+        <li> O <b>XMLHttpRequest</b> Object, que já é embutido no browser, para solicitar dados do servidor <br> </li>
+        <li> Javascript e HTML DOM para exibir ou utilizar os dados <br> </li>
+    </ul><br>
+
+    <h2>Etapas</h2>
+    <ol>
+        <li> Um evento ocorre na página web ( ex: a página é carregada, um botão e clicado... ) </li>
+        <li> Um XMLHttpRequest Object é criado pelo Javascript </li>
+        <li> O XMLHttpRequest Object envia uma requisição para o servidor </li>
+        <li> O servidor processa a requisição </li>
+        <li> O servidor envia uma resposta à página web </li>
+        <li> A resposta é lida pelo Javascript </li>
+        <li> A ação recebida é executada pelo Javascript </li>
+    </ol>
+
+    <h2>XMLHttpRequest</h2>
+        <p>
+            Está presente em todos os browsers modernos <br>
+	        Permite realizar a troca de dados com um servidor em segundo plano, sem que haja a necessidade de recarregar a página <br>
+        </p>
+        <h3>SINTAXE</h3>
+            <p> variable = new XMLHttpRequest; </p>
+        
+        <h3>PROPRIEDADES do XMLHttpRequest Object</h3>
+            <ul>
+                <li>onload</li>
+                    <p>
+                        Define uma função que vai ser chamada quando a requisição for recebida <br>
+                        A função que vai ser chamada será uma callback Function <br>
+                    </p>
+
+                <li>responseText</li>
+                    <p>
+                        Retorna a resposta do servidor no formato Javascript String <br>
+                    </p>
+
+                <li>responseXML</li>
+                    <p>
+                        Retorna a resposta do servidor em formato XML DOM Object <br>
+                    </p>
+
+                <li>readyState</li>
+                    <p>
+                        Armazena o estado do XMLHttpRequest <br>
+                        0: requisição não inicializada <br>
+                        1: conexão estabelecida com o servidor <br>
+                        2: requisição recebida <br>
+                        3: processando requisição <br>
+                        4: requisição concluída e resposta pronta <br>
+                    </p>
+
+                <li>onreadystatechange</li>
+                    <p>
+                        Define uma função callback a ser chamada sempre que a propriedade readyState for alterada <br>
+                        É disparado 4 vezes, uma vez para cada alteração no readyState <br>
+                    </p>
+
+                <li>status</li>
+                    <p>
+                        Retorna o número de status de uma requisição, retorna o status de um XMLHttpRequest Object <br>
+                        200: "OK" <br>
+                        403: "Forbidden" <br>
+                        404: "Not Found" <br>
+                        lista completa → https://www.w3schools.com/tags/ref_httpmessages.asp <br>
+                    </p>
+
+                <li>statusText</li>
+                    <p>
+                        Retorna a mensagem de status (ex: "OK"; "Not Found", ...)
+                    </p>
+            </ul>
+
+        <h3>MÉTODOS do XMLHttpRequest Object</h3>
+            <ul>
+                <li>new XMLHttpRequest()</li>
+                    <p>Cria um novo XMLHttpRequest Object</p>
+
+                <li>abort()</li>
+                    <p>Cancela a requisição atual</p>
+
+                <li>getAllResponseHeaders()</li>
+                    <p>Retorna todas as informações do header obtidas na resposta do servidor</p>
+
+                <li>getResponseHeader()</li>
+                    <p>Retorna apenas informações específicas do header obtidas na resposta do servidor</p>
+
+                <li>open(método, url, async, user, psw)</li>
+                    <p>            
+                        Especifíca qual será a requisição a ser feita, além de dados necessários como o URL do arquivo <br>
+                        Parâmetros: <br>
+                            • método: especifica o tipo de requisição ( GET ou SET ) <br>
+                            • url: endereço do arquivo no servidor, pode ser qualquer tipo de arquivo ( txt, xml, assim como server scripting files asp, php... ) <br>
+                            • async: true (assíncrono) / false (assíncrono) <br>
+                                ∟Por padrão o parâmetro é definido como true, assim é opcional usá-lo ao final <br>
+                                ∟O modo assíncrono permite com que o javascript execute outros scripts enquanto aguarda a resposta do servidor, lidando com essa resposta depois que ela estiver pronta <br>
+                                ∟O modo síncrono não é recomendado pois o javascript irá parar de executar outras tarefas para aguardar que a resposta esteja pronta <br>
+                                    -O modo síncrono as vezes pode ser usado para realizar testes <br>
+                                    -Pode ser encontrado em códigos mais antigos do javascript <br>
+                                    -Já que o código irá aguardar a conclusão do servidor, não há necessidade para a função onreadystatechange <br>
+                                    -Ferramentas de desenvolvimento modernas são incentivadas a alertar sobre o uso de solicitações síncronas, podendo lançar uma exceção InvalidAccessError quando isso ocorrer. <br>
+                            • user: nome de usuário opcional <br>
+                            • psw: password opcional <br>
+                    </p>
+
+                <li>send()</li>
+                    <p>
+                        Envia a requisição ao servidor <br>
+                        Usado para requisições GET <br>
+                    </p>
+
+                <li>send(string)</li>
+                    <p>
+                        Envia a requisição ao servidor <br>
+                        Usado para requisições POST <br>
+                    </p>
+
+                <li>setRequestHeader(header, value)</li>
+                    <p>	
+                        Adiciona um label/value pair ao header que está a ser enviado <br>
+                        Adds HTTP headers to the request <br>
+                        header: specifies the header name <br>
+                        value: specifies the header value <br>
+                    </p>
+            </ul>
+
+    <h2>Múltiplas Funções Callback</h2>
+        <p>
+            No caso de haver mais de uma operação AJAX a ser feita na página web, deve-se: <br>
+            Criar a função de execução do XMLHttpRequest object, e <br>
+            Criar uma função callback para cada operação AJAX a ser feita. <br>
+        </p>
+    
+    <h2>Enviando uma Requisição ao Servidor</h2>
+        <p>
+            Para enviar uma requisição ao servidor são usados os métodos <b>open()</b> e <b>send()</b> do XMLHttpRequest object <br>
+            ex: <br>
+            -xhttp.open("GET", "file_name.txt", true); <br>
+            -xhttp.send(); <br>
+        </p>
+
+    <h2>Fetch API</h2>
+        <p>
+            Browsers modernos usam Fetch API ao invés do XMLHttpRequest Object, pois ele é capaz de fazer o mesmo e de forma mais rápida <br>
+	        A interface do Fetch API permite que o browser faça requisições HTTP para o servidor <br>
+        </p>
+</body>
+</html>
