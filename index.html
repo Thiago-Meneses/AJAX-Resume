@@ -1,167 +1,299 @@
 <DOCTYPE html>
-<html>
+<html lang='en'>
 <head>
     <title>AJAX</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- My Global CSS -->
+    <link rel="stylesheet" type="text/css" href="https://thiago-meneses.github.io/myGlobalCSS.css" >
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300&family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>AJAX</h1>
-    <h2>Asynchronous Javascript And Ajax</h2>
+    <!-- TÍTULO -->
+    <div class="container-xxl px-4">
+        <h1 class="initialTitle">AJAX</h1>
+        <h2>Asynchronous Javascript And XML</h2>
+        <hr>
+    </div>
 
-    <p>
-        AJAX Só funciona dentro de um servidor! <br>
-        AJAX é usado tanto para pegar dados de um banco de dados como também para pegar dados de um servidor <br>
-        AJAX pode ser usado com o Javascript ou jQuery <br>
-        Não é uma linguagem de programação <br>
-        O AJAX permite que as páginas sejam atualizadas de forma assíncrona, trocando dados com um servidor em segundo plano, assim permitindo atualizar partes de uma página da web sem recarregar a página inteira. <br>
-    </p>
+    <!-- INFORMAÇÕES INICIAIS -->
+    <div class="container-xxl">
+        <div class="bd-content">
+            <div class="boundingLines"></div>
+            <h1 class="px-4"><mark class="lineText">Informações Iniciais</mark></h1>
+            <div class="px-4 py-3">
+                <ul>
+                    <li>Funciona <b>apenas</b> dentro de um <b>servidor</b>.</li>
+                    <li>Permite com que as páginas sejam atualizadas de forma <b class="red">ASSÍNCRONA</b>;</li>
+                        <ul>
+                            <li>Troca dados com um servidor em <b>segundo plano</b>;</li>
+                            <li>Permite atualizar partes de uma página sem recarregar a página inteira.</li><br>
+                        </ul>
+                    <li>Pode ser usado tanto para:</li>
+                        <ul>
+                            <li>Captar dados de um <b>banco de dados</b>;</li>
+                            <li>Captar dados de um <b>servidor</b>.</li>
+                        </ul>
+                    </li><br>
+                    <li>Pode ser usado com:
+                        <ul>
+                            <li>Javascript;</li>
+                            <li>JQuery.</li>
+                        </ul>
+                    </li><br>
+                    <li><b>Não</b> é uma linguagem de programação.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-    <h2>Como Funciona?</h2>
-    <ul>
-        O AJAX usa: <br>
-        <li> O <b>XMLHttpRequest</b> Object, que já é embutido no browser, para solicitar dados do servidor <br> </li>
-        <li> Javascript e HTML DOM para exibir ou utilizar os dados <br> </li>
-    </ul><br>
+    <!-- COMO FUNCIONA -->
+    <div class="container-xxl">
+        <div class="bd-content">
+            <div class="boundingLines"></div>
+            <h1 class="px-4"><mark class="lineText">Como Funciona?</mark></h1>
+            <div class="px-4 py-3">
+                <ul>
+                    <li>O AJAX usa: </li>
+                    <ul>
+                        <li> O <b class="red">XMLHttpRequest</b> <b>Object</b> para <b>solicitar dados do servidor</b>;</li>
+                        <ul>
+                            <li>XMLHttpRequest já é embutido no browser.</li>
+                        </ul><br>
+                        <li> <b>Javascript</b> e <b>HTML DOM</b> para <b>exibir</b> ou <b>utilizar os dados</b>.</li>
+                    </ul>
 
-    <h2>Etapas</h2>
-    <ol>
-        <li> Um evento ocorre na página web ( ex: a página é carregada, um botão e clicado... ) </li>
-        <li> Um XMLHttpRequest Object é criado pelo Javascript </li>
-        <li> O XMLHttpRequest Object envia uma requisição para o servidor </li>
-        <li> O servidor processa a requisição </li>
-        <li> O servidor envia uma resposta à página web </li>
-        <li> A resposta é lida pelo Javascript </li>
-        <li> A ação recebida é executada pelo Javascript </li>
-    </ol>
+                </ul><br>
+            </div>
+        </div>
+    </div>
 
-    <h2>XMLHttpRequest</h2>
-        <p>
-            Está presente em todos os browsers modernos <br>
-	        Permite realizar a troca de dados com um servidor em segundo plano, sem que haja a necessidade de recarregar a página <br>
-        </p>
-        <h3>SINTAXE</h3>
-            <p> variable = new XMLHttpRequest; </p>
-        
-        <h3>PROPRIEDADES do XMLHttpRequest Object</h3>
-            <ul>
-                <li>onload</li>
-                    <p>
-                        Define uma função que vai ser chamada quando a requisição for recebida <br>
-                        A função que vai ser chamada será uma callback Function <br>
-                    </p>
+    <!-- ETAPAS -->
+    <div class="container-xxl">
+        <div class="bd-content">
+            <div class="boundingLines"></div>
+            <h1 class="ps-4"><mark class="lineText">Etapas</mark></h1>
+            <div class="px-4 py-3">
+                <ol>
+                    <li class="mb-05em"> Um <b>evento ocorre</b> na página web ( ex: a página é carregada, um botão e clicado... ); </li>
+                    <li class="mb-05em"> Um <b>XMLHttpRequest Object</b> é <b>criado</b> pelo Javascript; </li>
+                    <li class="mb-05em"> O XMLHttpRequest Object <b>envia uma requisição para o servidor</b>; </li>
+                    <li class="mb-05em"> O servidor <b>processa</b> a requisição; </li>
+                    <li class="mb-05em"> O servidor envia uma <b>resposta à página web</b>; </li>
+                    <li class="mb-05em"> A resposta é <b>lida pelo Javascript</b>; </li>
+                    <li class="mb-05em"> A ação recebida é <b>executada</b> pelo Javascript. </li>
+                </ol>
+            </div>
+        </div>
+    </div>
 
-                <li>responseText</li>
-                    <p>
-                        Retorna a resposta do servidor no formato Javascript String <br>
-                    </p>
+    <!-- XMLHttpRequest -->
+    <div class="container-xxl">
+        <div class="bd-content">
+            <div class="boundingLines"></div>
+            <h1 class="px-4"><mark class="lineText">XMLHttpRequest</mark></h1>
+            <div class="px-4 py-3">
+                <!-- SINTAXE E CONCEITOS INICIAIS -->
+                <div class="px-4 py-4">
+                    <h2>Sintaxe</h2>
+                    <code class="inlineCodeTag fs-4">variable = <b>new XMLHttpRequest</b>;</code>    
+                    <ul class="pt-2 mt-3">
+                        <li>Está presente em <b>todos browsers modernos;</b></li>
+                        <li>Permite realizar a troca de dados com um servidor em <b>segundo plano.</b>
+                            <ul><li>Não há a necessidade de recarregar a página.</li></ul>
+                    </ul>
+                </div>
+                <hr>
 
-                <li>responseXML</li>
-                    <p>
-                        Retorna a resposta do servidor em formato XML DOM Object <br>
-                    </p>
+                <!-- PROPRIEDADES DO XMLHttpRequest Object -->
+                <div class="px-4 py-4">
+                    <h2 class="mb-1em"><b class="red">Propriedades</b> do XMLHttpRequest Object</h2>
+                    <ul>
+                        <li class="mb-15em"><code class="inlineCodeTag">onload</code>
+                            <ul>
+                                <li>Define uma função que vai ser chamada quando a requisição for recebida </li>
+                                <li>Essa função será uma <b>callback Function</b> </li>
+                            </ul>
+                        </li>
+                        <li class="mb-15em"><code class="inlineCodeTag">responseText</code>
+                            <ul><li>Retorna a resposta do servidor no formato <b>Javascript String</b> </li></ul>
+                        </li>
+                        <li class="mb-15em"><code class="inlineCodeTag">responseXML</code>
+                            <ul> <li>Retorna a resposta do servidor no formato <b>XML DOM Object</b> </li></ul>
+                        </li>
+                        <li class="mb-15em"><code class="inlineCodeTag">readyState</code>
+                            <ul>
+                                <li>Armazena o estado do XMLHttpRequest</li>
+                            </ul>
+                            <p class="ps-4">
+                                <b>0</b> = requisição não inicializada; <br>
+                                <b>1</b> = conexão estabelecida com o servidor; <br>
+                                <b>2</b> = requisição recebida; <br>
+                                <b>3</b> = processando requisição; <br>
+                                <b>4</b> = requisição concluída e resposta pronta. <br>
+                            </p>
+                        </li>
+                        <li class="mb-15em"><code class="inlineCodeTag">onreadystatechange</code>
+                            <ul>
+                                <li>Define uma <b>função callback</b> a ser chamada sempre quando a propriedade <b>readyState for alterada</b> </li>
+                                <li>É disparada <b>4 vezes</b>, uma para cada alteração no readyState</li>
+                            </ul>
+                        </li>
+                        <li class="mb-15em"><code class="inlineCodeTag">status</code>
+                            <ul><li>Retorna o <b>número do status</b> de uma requisição XMLHttpRequest Object <br></li></ul>
+                            <p class="ps-4">
+                                <b>200</b>: "OK" <br>
+                                <b>403</b>: "Forbidden" <br>
+                                <b>404</b>: "Not Found" <br>
+                                lista completa → https://www.w3schools.com/tags/ref_httpmessages.asp <br>
+                            </p>
+                        </li>
+                        <li class="mb-15em"><code class="inlineCodeTag">statusText</code>
+                            <ul><li>Retorna a <b>mensagem de status</b> ("OK", "Not Found", ...)</li></ul>
+                        </li>
+                    </ul>
+                </div>
+                <hr>
 
-                <li>readyState</li>
-                    <p>
-                        Armazena o estado do XMLHttpRequest <br>
-                        0: requisição não inicializada <br>
-                        1: conexão estabelecida com o servidor <br>
-                        2: requisição recebida <br>
-                        3: processando requisição <br>
-                        4: requisição concluída e resposta pronta <br>
-                    </p>
+                <!-- MÉTODOS DO XMLHttpRequest Object -->
+                <div class="px-4 py-4">
+                    <h2 class="mb-1em"><b class="red">Métodos</b> do XMLHttpRequest Object</h2>
+                    <ul>
+                        <li><code class="inlineCodeTag">new XMLHttpRequest()</code>
+                        <ul class="mt-05em mb-3em"><li><b>Cria</b> um novo <b>XMLHttpRequest Object.</b></li></ul></li>
+                        
+                        <li class="mb-3em "><code class="inlineCodeTag">abort( )</code>
+                        <ul class="mt-05em"><li><b>Cancela</b> a requisição atual.</li></ul></li>
 
-                <li>onreadystatechange</li>
-                    <p>
-                        Define uma função callback a ser chamada sempre que a propriedade readyState for alterada <br>
-                        É disparado 4 vezes, uma vez para cada alteração no readyState <br>
-                    </p>
+                        <li class="mb-3em"><code class="inlineCodeTag">getAllResponseHeaders( )</code>
+                        <ul class="mt-05em"><li>Retorna <b>TODOS OS HEADERS</b> obtidos na resposta do servidor.</li></ul></li>
+                        
+                        <li class="mb-3em"><code class="inlineCodeTag">getResponseHeader( nomeHeader )</code>
+                        <ul class="mt-05em"><li>Retorna um <b>HEADER EM ESPECÍFICO</b> obtido na resposta do servidor.</li></ul></li>
+                        
+                        <li class="mb-3em"><code class="inlineCodeTag"> open( método, url, async, user, psw )</code>
+                        <ul class="mt-05em"> 
+                                <li class="mb-15em">Especifíca qual será a <b>requisição a ser feita</b> e os <b>dados necessários</b></li>           
+                                <li>Parâmetros:</li>
+                                <ol>
+                                    <li class="mb-05em"><b>método:</b> tipo de requisição ( GET ou SET )</li>
+                                    <li class="mb-05em"><b>url:</b> endereço do arquivo no servidor
+                                        <ul><li>Pode ser qualquer tipo de arquivo ( txt, xml, assim como server scripting files asp, php... )</li></ul>
+                                    </li>
+                                    <li class="mb-05em"><b>async:</b> true (assíncrono) / false (assíncrono)
+                                        <ul>
+                                            <li>Parâmetro opcional</li>
+                                            <li>Tem valor <b>true</b> por padrão</li>
 
-                <li>status</li>
-                    <p>
-                        Retorna o número de status de uma requisição, retorna o status de um XMLHttpRequest Object <br>
-                        200: "OK" <br>
-                        403: "Forbidden" <br>
-                        404: "Not Found" <br>
-                        lista completa → https://www.w3schools.com/tags/ref_httpmessages.asp <br>
-                    </p>
+                                                <!-- O modo assíncrono permite com que o javascript execute outros scripts enquanto aguarda a resposta do servidor, lidando com essa resposta depois que ela estiver pronta
+                                                O modo síncrono não é recomendado pois o javascript irá parar de executar outras tarefas para aguardar que a resposta esteja pronta
+                                                O modo síncrono as vezes pode ser usado para realizar testes <br>
+                                                Pode ser encontrado em códigos mais antigos do javascript <br>
+                                                Já que o código irá aguardar a conclusão do servidor, não há necessidade para a função onreadystatechange <br>
+                                                Ferramentas de desenvolvimento modernas são incentivadas a alertar sobre o uso de solicitações síncronas, podendo lançar uma exceção InvalidAccessError quando isso ocorrer. <br> -->
+                                        </ul>
+                                    </li>
+                                    <li class="mb-05em"><b>user:</b> nome de usuário 
+                                        <ul><li>Parâmetro opcional</li></ul>
+                                    </li>
+                                    <li class="mb-05em"><b>psw:</b> password
+                                        <ul><li>Parâmetro opcional</li></ul>
+                                    </li>
+                                </ol>
+                        </ul></li>
+                        
+                        <li class="mb-15em"><code class="inlineCodeTag">send()</code>
+                        <ul class="mt-05em">
+                                <li>Envia a requisição ao servidor</li>
+                                <li>Usado para requisições <b>GET</b></li>
+                        </ul></li>
 
-                <li>statusText</li>
-                    <p>
-                        Retorna a mensagem de status (ex: "OK"; "Not Found", ...)
-                    </p>
-            </ul>
+                        <li class="mb-15em"><code class="inlineCodeTag">send(string)</code>
+                        <ul class="mt-05em">
+                                <li>Envia a requisição ao servidor </li>
+                                <li>Usado para requisições <b>POST</b></li>
+                        </ul></li>
 
-        <h3>MÉTODOS do XMLHttpRequest Object</h3>
-            <ul>
-                <li>new XMLHttpRequest()</li>
-                    <p>Cria um novo XMLHttpRequest Object</p>
+                        <li class="mb-15em"><code class="inlineCodeTag">setRequestHeader( header, value )</code>
+                            <ul class="mt-05em">
+                                <li>Adiciona um label/value pair ao header que está a ser enviado <br></li>
+                                <li>Adiciona headers HTTP para a requisição <br></li>
+                                <li>Parâmetros</li>
+                                <ul>
+                                    <li><b>header:</b> Especifica o nome do header</li>	
+                                    <li><b>value:</b> Especifica o valor do header</li>
+                                </ul>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 
-                <li>abort()</li>
-                    <p>Cancela a requisição atual</p>
+    <!-- VÁRIAS FUNÇÕES CALLBACK -->
+    <div class="container-xxl">
+        <div class="bd-content">
+            <div class="boundingLines"></div>
+            <h1 class="px-4"><mark class="lineText">Várias Funções Callback</mark></h1>
+            <div class="px-4 py-3">
+                <ul>
+                    <li>Havendo mais de uma operação AJAX a ser feita na página: </li>   
+                    <ul>
+                        <li>Criar a função de execução do XMLHttpRequest object</li>
+                        <li>Criar <b>uma função callback</b> para <b>cada operação AJAX</b> a ser feita</li>
+                    </ul>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-                <li>getAllResponseHeaders()</li>
-                    <p>Retorna todas as informações do header obtidas na resposta do servidor</p>
+    <!-- REQUISIÇÃO AO SERVIDOR -->
+    <div class="container-xxl">
+        <div class="bd-content">
+            <div class="boundingLines"></div>
+            <h1 class="px-4"><mark class="lineText">Requisição ao Servidor</mark></h1>
+            <div class="px-4 py-3">
+                <ul class="px-4">
+                    <li>Uma requisição é enviada ao servidor usando:</li>
+                    <ul><li>Os métodos <code class="inlineCodeTag">open()</code> e <code class="inlineCodeTag">send()</code> do XMLHttpRequest object</li></ul>
+                    <p>Exemplo</p>
+                    <pre class="preTag px-4">
+                        <code>
+xhttp.<b>open("GET", "file_name.txt", true)</b>;
+xhttp.<b>send()</b>;
+                        </code>
+                    </pre>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-                <li>getResponseHeader()</li>
-                    <p>Retorna apenas informações específicas do header obtidas na resposta do servidor</p>
+    <div class="container-xxl">
+        <div class="bd-content">
+            <div class="boundingLines"></div>
+            <h1 class="px-4"><mark class="lineText">Fetch API</b></mark></h1>
+            <div class="px-4 py-3">
+                <ul class="px-4">   
+                    <li>Browsers modernos usam <b>Fetch API</b> ao invés do XMLHttpRequest Object</li>
+                    <ul>
+                        <li>A Fetch API faz o mesmo e de forma <b>mais rápida</b></li>
+                        <li>A interface do Fetch API permite com que o browser faça <b>requisições HTTP</b> para o <b>servidor</b></li>
+                    </ul>  
+                </ul>
+            </div>
+        </div>
+    </div>
 
-                <li>open(método, url, async, user, psw)</li>
-                    <p>            
-                        Especifíca qual será a requisição a ser feita, além de dados necessários como o URL do arquivo <br>
-                        Parâmetros: <br>
-                            • método: especifica o tipo de requisição ( GET ou SET ) <br>
-                            • url: endereço do arquivo no servidor, pode ser qualquer tipo de arquivo ( txt, xml, assim como server scripting files asp, php... ) <br>
-                            • async: true (assíncrono) / false (assíncrono) <br>
-                                ∟Por padrão o parâmetro é definido como true, assim é opcional usá-lo ao final <br>
-                                ∟O modo assíncrono permite com que o javascript execute outros scripts enquanto aguarda a resposta do servidor, lidando com essa resposta depois que ela estiver pronta <br>
-                                ∟O modo síncrono não é recomendado pois o javascript irá parar de executar outras tarefas para aguardar que a resposta esteja pronta <br>
-                                    -O modo síncrono as vezes pode ser usado para realizar testes <br>
-                                    -Pode ser encontrado em códigos mais antigos do javascript <br>
-                                    -Já que o código irá aguardar a conclusão do servidor, não há necessidade para a função onreadystatechange <br>
-                                    -Ferramentas de desenvolvimento modernas são incentivadas a alertar sobre o uso de solicitações síncronas, podendo lançar uma exceção InvalidAccessError quando isso ocorrer. <br>
-                            • user: nome de usuário opcional <br>
-                            • psw: password opcional <br>
-                    </p>
-
-                <li>send()</li>
-                    <p>
-                        Envia a requisição ao servidor <br>
-                        Usado para requisições GET <br>
-                    </p>
-
-                <li>send(string)</li>
-                    <p>
-                        Envia a requisição ao servidor <br>
-                        Usado para requisições POST <br>
-                    </p>
-
-                <li>setRequestHeader(header, value)</li>
-                    <p>	
-                        Adiciona um label/value pair ao header que está a ser enviado <br>
-                        Adds HTTP headers to the request <br>
-                        header: specifies the header name <br>
-                        value: specifies the header value <br>
-                    </p>
-            </ul>
-
-    <h2>Múltiplas Funções Callback</h2>
-        <p>
-            No caso de haver mais de uma operação AJAX a ser feita na página web, deve-se: <br>
-            Criar a função de execução do XMLHttpRequest object, e <br>
-            Criar uma função callback para cada operação AJAX a ser feita. <br>
-        </p>
-    
-    <h2>Enviando uma Requisição ao Servidor</h2>
-        <p>
-            Para enviar uma requisição ao servidor são usados os métodos <b>open()</b> e <b>send()</b> do XMLHttpRequest object <br>
-            ex: <br>
-            -xhttp.open("GET", "file_name.txt", true); <br>
-            -xhttp.send(); <br>
-        </p>
-
-    <h2>Fetch API</h2>
-        <p>
-            Browsers modernos usam Fetch API ao invés do XMLHttpRequest Object, pois ele é capaz de fazer o mesmo e de forma mais rápida <br>
-	        A interface do Fetch API permite que o browser faça requisições HTTP para o servidor <br>
-        </p>
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
